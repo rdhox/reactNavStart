@@ -13,7 +13,10 @@ const OnBoardingNav = props => {
   const { finishOnBoarding } = props;
 
   return (
-    <OnBoardingStack.Navigator>
+    <OnBoardingStack.Navigator
+      initialRouteName="Screen1"
+      headerMode="none"
+    >
       <OnBoardingStack.Screen name="Screen1" component={Screen1} />
       <OnBoardingStack.Screen name="Screen2" component={Screen2} />
       <OnBoardingStack.Screen name="Screen3" component={Screen3} initialParams={{finishOnBoarding}} />
