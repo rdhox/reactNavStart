@@ -1,0 +1,6 @@
+module Pods_reactNavTest {
+  umbrella header "Pods-reactNavTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
