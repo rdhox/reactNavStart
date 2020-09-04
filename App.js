@@ -5,19 +5,18 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import OnBoardingNav from './navigation/OnBoardingNav';
 import AppNav from './navigation/AppNav';
+import { useStore } from './store'; 
+
+import './utils/i18n';
 
 export default function App() {
 
-  function finishOnBoarding() {
-    setOnBoarding(false);
-  }
-
-  const [ onBoarding, setOnBoarding ] = useState(true);
+  const isReady = useStore(state => state.isReady);
 
   return (
     <NavigationContainer>
       <View style={styles.container}>
-        {onBoarding ? (<OnBoardingNav finishOnBoarding={finishOnBoarding}  />):(<AppNav />)}
+        {!isReady ? (<OnBoardingNav />):(<AppNav />)}
       </View>
     </NavigationContainer>
   );

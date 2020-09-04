@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, Animated } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useTranslation } from 'react-i18next';
 
 const Screen1 = props => {
 
@@ -10,6 +11,7 @@ const Screen1 = props => {
   }
 
   const navigation = useNavigation();
+  const { t } = useTranslation();
 
   const valueAnim = useRef(new Animated.Value(0)).current;
 
@@ -37,7 +39,7 @@ const Screen1 = props => {
             ]
           }]}
         >
-          Hello!
+          {t('onBoarding.welcome')}
         </Animated.Text>
       </TouchableOpacity>
     </LinearGradient>

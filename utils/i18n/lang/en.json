@@ -1,0 +1,10 @@
+{
+  "onBoarding": {
+    "welcome": "Hello!"
+  },
+  "App": {
+    "Home": {
+      "title": "Welcome in our App"
+    }
+  }
+}

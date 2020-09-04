@@ -1,18 +1,14 @@
 import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { useRoute } from '@react-navigation/native';
+import { useStore } from '../../store';
 
 const Screen3 = props => {
 
-  function goToApp() {
-    route.params?.finishOnBoarding() || null;
-  }
-
-  const route = useRoute();
+  const setIsReady = useStore.getState().setIsReady;
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={goToApp}>
+      <TouchableOpacity onPress={() => setIsReady(true)}>
         <Text>Screen3</Text>
       </TouchableOpacity>
     </View>
