@@ -16,7 +16,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <View style={styles.container}>
-        {!isReady ? (<OnBoardingNav />):(<AppNav />)}
+        {isReady ? (<OnBoardingNav />):(<AppNav />)}
       </View>
     </NavigationContainer>
   );
